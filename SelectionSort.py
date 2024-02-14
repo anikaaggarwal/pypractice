@@ -11,5 +11,5 @@ def selectionSort(arr, size):
 arr = [5, 75, 4, -145, -10, 22, -202]
 size = len(arr)
 selectionSort(arr,size)
-print('The array after sorting in Ascending Order by selection sort is:')
+print('The sorted array is:')
 print(arr)
