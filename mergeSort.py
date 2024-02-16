@@ -1,36 +1,38 @@
-def merge(arr, p, q, r):
-    n1 = q - p + 1
-    n2 = r - q
+def merge(arr, l, m, r):
+    n1 = m - l + 1
+    n2 = r - m
 
-    arr1 = [0] * (n1)
-    arr2 = [0] * (n2)
+    #temporary arrays
+    L = [0] * (n1)
+    R = [0] * (n2)
 
+    #copy data into temp arrays
     for i in range(0, n1):
-        arr1[i] = arr1[p + i]
+        L[i] = arr[l + i]
 
     for j in range(0, n2):
-        arr2[j] = arr2[q + 1 + j]
+        R[j] = arr[m + 1 + j]
 
     i = 0
     j = 0
-    k = 1
+    k = l
 
     while i < n1 and j < n2:
-        if arr1[i] <= arr2[j]:
-            arr[k] = arr1[i]
+        if L[i] <= R[j]:
+            arr[k] = L[i]
             i += 1
         else:
-            arr[k] = arr2[j]
+            arr[k] = R[j]
             j += 1
         k += 1
 
         while i < n1:
-            arr[k] = arr1[i]
+            arr[k] = L[i]
             i += 1
             k += 1
 
         while j < n2:
-            arr[k] = arr2[j]
+            arr[k] = R[j]
             j += 1
             k += 1
 
@@ -42,7 +44,7 @@ def mergeSort(arr, l, r):
         mergeSort(arr, m+1, r)
         merge(arr, l, m, r)
 
-arr = [4, 7, 22, 54, 56, 88, 99, 345]
+arr = [7, 22, 34, 56, 23, 1, 345]
 n = len(arr)
 print('given array')
 for i in range(n):
