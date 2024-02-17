@@ -10,6 +10,7 @@ def merge(arr, l, m, r):
     for i in range(0, n1):
         L[i] = arr[l + i]
 
+
     for j in range(0, n2):
         R[j] = arr[m + 1 + j]
 
@@ -38,19 +39,20 @@ def merge(arr, l, m, r):
 
 def mergeSort(arr, l, r):
     if l < r:
+
         m = l+(r-l)//2
 
         mergeSort(arr, l, m)
         mergeSort(arr, m+1, r)
         merge(arr, l, m, r)
 
-arr = [7, 22, 34, 56, 23, 1, 345]
+arr = [12, 11, 13, 5, 6, 7]
 n = len(arr)
-print('given array')
+print("Given array is")
 for i in range(n):
-    print(arr)
+    print("%d" % arr[i],end=" ")
 
 mergeSort(arr, 0, n-1)
-print('Sorted array')
+print("\n\nSorted array is")
 for i in range(n):
-    print(arr[i])
+    print("%d" % arr[i],end=" ")
