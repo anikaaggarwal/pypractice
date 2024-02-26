@@ -21,13 +21,21 @@ def heapsort(arr):
         heapify(arr, N, i)
 
     for i in range(N-1, 0, -1):
-        arr[i], arr[0] = arr[0]. arr[i]
+        arr[i], arr[0] = arr[0], arr[i]
         heapify(arr, i, 0)
 
 arr = [12, 11, 13, 16, 2, 4, 6]
+arr2 = [12, 34, 56, 78, 89, 100]
 heapsort(arr)
 N = len(arr)
 
 print('Sorted Array is')
 for i in range (N):
     print("%d" % arr[i], end=" ")
+
+heapsort(arr2)
+N1 = len(arr2)
+
+print('Sorted Array is')
+for i in range (N1):
+    print("%d" % arr2[i], end=" ")
