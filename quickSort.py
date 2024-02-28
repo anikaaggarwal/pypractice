@@ -13,3 +13,16 @@ def partition(array, low, high):
 
 
 def quickSort(array, low, high):
+    if low < high:
+        pi = partition(array, low, high)
+        quickSort(array, low, pi - 1)
+        quickSort(array, pi + 1, high)
+
+input = [1, 7, 4, 3, 20, 27, -5]
+print("Unsorted Array is")
+print(input)
+
+n = len(input)
+quickSort(input, 0, n-1)
+print("Sorted Array after quicksort is")
+print(input)
