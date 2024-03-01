@@ -24,3 +24,18 @@ def countingsort(arr, place):
     i = 0
     for i in range(0,len(arr)):
         arr[i] = output[i]
+
+def radixSort(arr):
+    maximum = max(arr)
+
+    place = 1
+    while maximum // place > 0:
+        countingsort(arr, place)
+        place *= 10
+
+
+arr = [ 329, 457, 657, 839, 436, 720, 355]
+radixSort(arr)
+
+for i in range(len(arr)):
+    print(arr[i])
