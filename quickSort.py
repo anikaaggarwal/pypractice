@@ -26,3 +26,9 @@ n = len(input)
 quickSort(input, 0, n-1)
 print("Sorted Array after quicksort is")
 print(input)
+
+#edge case where the array is already sorted, the pivot will be
+#the smallest or largest element in the array
+#which means worst case scenario, so it would not improve
+#the efficiency of the process if you use quick sort on an already
+#sorted array

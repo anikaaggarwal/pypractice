@@ -12,7 +12,7 @@ def countingsort(arr, place):
     for i in range(1,10):
         count[i] += count[i-1]
 
-    #building the output arrya
+    #building the output array
     i = n-1
     while i>=0:
         index = (arr[i]/place)
@@ -20,7 +20,7 @@ def countingsort(arr, place):
         count[int((index)%10)] -= 1
         i -= 1
 
-    #storing sorted array in original arrya
+    #storing sorted array in original array
     i = 0
     for i in range(0,len(arr)):
         arr[i] = output[i]
@@ -39,3 +39,6 @@ radixSort(arr)
 
 for i in range(len(arr)):
     print(arr[i])
+
+#edge case, for sorted array as input, will have to go through
+#the steps to put it into buckets and, not as efficient
