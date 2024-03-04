@@ -16,3 +16,6 @@ bubbleSort(arr)
 print('Sorted Array')
 for i in range(len(arr)):
         print("% d" % arr[i], end=" ")
+
+#edge case when array is already sorted, bubble sort will terminate
+#after the first iteration , since no swaps are made

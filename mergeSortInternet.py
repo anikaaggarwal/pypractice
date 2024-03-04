@@ -69,3 +69,8 @@ mergeSort(arr, 0, n-1)
 print("\n\nSorted array is")
 for i in range(n):
     print("%d" % arr[i],end=" ")
+
+#for edge case where the array is already sorted, check
+#condition if 'else' clause is executer for both,
+#if so, no need to call merge function within mergeSort and
+#just display the input array
