@@ -15,3 +15,10 @@ def insertionSort(arr):
 arr = [31, 41, 59, 26, 41, 58]
 insertionSort(arr)
 print(arr)
+
+#if the input array is already sorted
+#the inner loop never executes
+
+#if the input array is sorted in reverse order, then the inner
+#loop executes the maximum possible times, so the running time
+#is as bad as possible O(n^2)
