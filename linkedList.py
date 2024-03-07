@@ -83,6 +83,47 @@ class LinkedList:
             current_node = current_node.next
         current_node.next = None
 
+    def removeAtIndex(self, index):
+        if self.head is None:
+            return
+        current_node = self.head
+        position = 0
+        if position is index:
+            self.removeFirstNode()
+        else:
+            while(current_node != Node and position+1 != index):
+                position += 1
+                current_node = current_node.next
+            if current_node != None:
+                current_node.next = current_node.next.next
+            else:
+                print("Index not found")
+
+    def removeNode(self, data):
+        current_node = self.head
+
+        if current_node is data:
+            self.removeFirstNode
+            return
+        while(current_node != None and current_node.next.data != data):
+            current_node = current_node.next
+
+        if current_node is None:
+            return
+        else:
+            current_node.next = current_node.next.next
+
+    def sizeOfList(self):
+        size = 0
+        if(self.head):
+            current_node = self.head
+            while(current_node):
+                size += 1
+                current_node = current_node.next
+            return size
+        else:
+            return 0
+
 
 #creating a new linked list
 llist = LinkedList()
@@ -107,3 +148,13 @@ llist.printLL()
 print("Removing last node")
 llist.removeLastNode()
 llist.printLL()
+
+print("Removing node at specified index")
+llist.removeAtIndex(1)
+llist.printLL()
+print("Removing node at specified index AGAIN")
+llist.removeAtIndex(1)
+llist.printLL()
+
+print("Size of the linked list")
+print(llist.sizeOfList())
