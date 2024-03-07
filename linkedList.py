@@ -63,13 +63,26 @@ class LinkedList:
             else:
                 print("Index not found")
 
-
     #Printing the linked list
     def printLL(self):
         current_node = self.head
         while(current_node):
             print(current_node.data)
             current_node = current_node.next
+
+    def removeFirstNode(self):
+        if self.head is None:
+            return
+        self.head = self.head.next
+
+    def removeLastNode(self):
+        if self.head is None:
+            return
+        current_node = self.head
+        while(current_node.next.next):
+            current_node = current_node.next
+        current_node.next = None
+
 
 #creating a new linked list
 llist = LinkedList()
@@ -84,4 +97,13 @@ llist.insertAtIndex('g', 2)
 llist.updateNode('z', 0)
 
 print("Node Data")
+llist.printLL()
+
+print("Removing first node")
+
+llist.removeFirstNode()
+llist.printLL()
+
+print("Removing last node")
+llist.removeLastNode()
 llist.printLL()
